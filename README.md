@@ -121,7 +121,7 @@ _For more examples, please refer to the [Project document](https://drive.google.
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Mock API to provide restaurant list.
+- [x] Mock API to provide restaurant list.
 - [ ] Restaurants list.
 - [ ] Favorite list items.
 - [ ] Filter list.
