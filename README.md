@@ -1,16 +1,3 @@
-<div id="top"></div>
-<!-- PROJECT SHIELDS -->
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-</div>
-
 # WIP: Restaurants list
 
 This demo Restaurants list created by Rocio Piotti provides the user with a list of restaurants and a map that shows their location. Each restaurant can be added to favorites. The list is sorted alphabetically and filtered by category.
@@ -49,7 +36,7 @@ This demo Restaurants list created by Rocio Piotti provides the user with a list
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]]
 
 The purpose of this project is to implement a development with React 18 in order to stay up-to-date with the library's new features.
 
