@@ -36,7 +36,7 @@ This demo Restaurants list created by Rocio Piotti provides the user with a list
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]]
+[Product Name Screen Shot][product-screenshot]
 
 The purpose of this project is to implement a development with React 18 in order to stay up-to-date with the library's new features.
 
