@@ -1,10 +1,6 @@
 # WIP: Restaurants list
 
-This demo Restaurants list created by Rocio Piotti provides the user with a list of restaurants and a map that shows their location. Each restaurant can be added to favorites. The list is sorted alphabetically and filtered by category.
-
-[Explore the docs](https://docs.google.com/document/d/1V_hsKyKSSoYEf_wb1n5epqy5IbGWbrwfe60JlldxD3Y/edit?usp=sharing)
-
-[WIP: View Demo]()
+Restaurants list demo created by Rocio Piotti provides the user with a list of restaurants and a map that shows their location. Each restaurant can be added to favorites. The list is sorted alphabetically and filtered by category.
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -16,6 +12,9 @@ This demo Restaurants list created by Rocio Piotti provides the user with a list
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
+    <li><a href="#wireframes">Wireframes</a></li>
+    <li><a href="#tasks">Tasks</a></li>
+    <li><a href="#data-structure">Data structure</a></li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
@@ -31,8 +30,6 @@ This demo Restaurants list created by Rocio Piotti provides the user with a list
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
@@ -40,6 +37,8 @@ This demo Restaurants list created by Rocio Piotti provides the user with a list
   <img src="https://raw.githubusercontent.com/rociopiotti/restaurants-list/main/src/images/restaurant-list-screenshot.png" alt="project screenshot" height="400">
 </p>
 
+
+Restaurants list demo created by Rocio Piotti provides the user with a list of restaurants and a map that shows their location. Each restaurant can be added to favorites. The list is sorted alphabetically and filtered by category.
 
 The purpose of this project is to implement a development with React 18 in order to stay up-to-date with the library's new features.
 
@@ -56,10 +55,7 @@ The purpose of this project is to implement a development with React 18 in order
 - Data structure with json format.
 - Simple server to provide list items.
 
-
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 ### Built With
 
@@ -84,10 +80,16 @@ The purpose of this project is to implement a development with React 18 in order
 * [Netlify](https://www.netlify.com/)
 * [Github](https://github.com/)
 
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+## Wireframes
+[Link to Figma](https://www.figma.com/file/AfTsd3XD2UuLc8X9fNIZOE/Demo-Project-2022?node-id=0%3A1)
 
+## Tasks
+[Link to Jira (A Jira account is require)](https://rociodevelopment.atlassian.net/)
+
+## Data structure
+[Link to Figma](https://www.figma.com/file/9fwFjEUBIyc3QfGHJ2qxAr/Restaurant-model?node-id=0%3A1)
 
 <!-- GETTING STARTED -->
 ## WIP: Getting Started
@@ -99,11 +101,10 @@ The purpose of this project is to implement a development with React 18 in order
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-
 <!-- USAGE EXAMPLES -->
 ## WIP: Usage
 
-_For more examples, please refer to the [Documentation](https://docs.google.com/document/d/1V_hsKyKSSoYEf_wb1n5epqy5IbGWbrwfe60JlldxD3Y/edit?usp=sharing)_
+_For more examples, please refer to the [Project document](https://docs.google.com/document/d/1V_hsKyKSSoYEf_wb1n5epqy5IbGWbrwfe60JlldxD3Y/edit?usp=sharing)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
