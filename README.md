@@ -1,10 +1,11 @@
+<div id="top"></div>
+
 # WIP: Restaurants list
 
-This demo Restaurants list created by Rocio Piotti provides the user with a list of restaurants and a map that shows their location. Each restaurant can be added to favorites. The list is sorted alphabetically and filtered by category.
+Restaurants list demo created by Rocio Piotti provides the user with a list of restaurants and a map that shows their location. Each restaurant can be added to favorites. The list is sorted alphabetically and filtered by category.
 
-[Explore the docs](https://docs.google.com/document/d/1V_hsKyKSSoYEf_wb1n5epqy5IbGWbrwfe60JlldxD3Y/edit?usp=sharing)
+> This is a work in progress demo. Information will be updated.
 
-[WIP: View Demo]()
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -16,6 +17,10 @@ This demo Restaurants list created by Rocio Piotti provides the user with a list
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
+    <li><a href="#wireframes">Wireframes</a></li>
+    <li><a href="#tasks">Tasks</a></li>
+    <li><a href="#data-structure">Data structure</a></li>
+    <li><a href="#project-details">Project details</a></li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
@@ -32,11 +37,15 @@ This demo Restaurants list created by Rocio Piotti provides the user with a list
 </details>
 
 
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]]
+<p align="center">
+  <img src="https://raw.githubusercontent.com/rociopiotti/restaurants-list/main/src/images/restaurant-list-screenshot.png" alt="project screenshot" height="400">
+</p>
+
+
+Restaurants list demo created by Rocio Piotti provides the user with a list of restaurants and a map that shows their location. Each restaurant can be added to favorites. The list is sorted alphabetically and filtered by category.
 
 The purpose of this project is to implement a development with React 18 in order to stay up-to-date with the library's new features.
 
@@ -53,9 +62,7 @@ The purpose of this project is to implement a development with React 18 in order
 - Data structure with json format.
 - Simple server to provide list items.
 
-
 <p align="right">(<a href="#top">back to top</a>)</p>
-
 
 
 ### Built With
@@ -74,16 +81,45 @@ The purpose of this project is to implement a development with React 18 in order
 
 #### Backend Stack
 
-* [[Mocky](https://designer.mocky.io/)
+* [Mocky](https://designer.mocky.io/)
 
 #### CI/CD
 
 * [Netlify](https://www.netlify.com/)
 * [Github](https://github.com/)
 
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+## Wireframes
+[Link to Figma](https://www.figma.com/file/AfTsd3XD2UuLc8X9fNIZOE/Demo-Project-2022?node-id=0%3A1)
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+
+
+## Tasks
+[Link to Jira (A Jira account is require)](https://rociodevelopment.atlassian.net/)
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+## Data structure
+[Link to Figma](https://www.figma.com/file/9fwFjEUBIyc3QfGHJ2qxAr/Restaurant-model?node-id=0%3A1)
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+## Project details
+[Link](https://drive.google.com/file/d/1erA3gf9eFcfQiNiuickz1NjY-5EKfDGa/view?usp=sharing):
+This document presents details of the Restaurants list demo.
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 <!-- GETTING STARTED -->
@@ -96,11 +132,10 @@ The purpose of this project is to implement a development with React 18 in order
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-
 <!-- USAGE EXAMPLES -->
 ## WIP: Usage
 
-_For more examples, please refer to the [Documentation](https://docs.google.com/document/d/1V_hsKyKSSoYEf_wb1n5epqy5IbGWbrwfe60JlldxD3Y/edit?usp=sharing)_
+_For more examples, please refer to the [Project document](https://drive.google.com/file/d/1zPkwykzrs9nOeaw-IbQI58gjre_4j844/view?usp=sharing)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -109,12 +144,12 @@ _For more examples, please refer to the [Documentation](https://docs.google.com/
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Mock API to provide restaurant list.
+- [x] Mock API to provide restaurant list.
 - [ ] Restaurants list.
 - [ ] Favorite list items.
 - [ ] Filter list.
 - [ ] Sort  list.
-- [ ] OpenStreetMapI integration.
+- [ ] OpenStreetMap integration.
 - [ ] Deployment in Netlify.
 
 
@@ -137,7 +172,7 @@ Rocío Piotti - [LinkedIn](https://www.linkedin.com/in/rocio-piotti/)
 <!-- ACKNOWLEDGMENTS -->
 ## WIP: Acknowledgments
 * [Random ID Generator](https://www.345tool.com/generator/random-id-generator)
-*
+* [Pexels](https://www.pexels.com/es-es/)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
