@@ -91,6 +91,9 @@ The purpose of this project is to implement a development with React 18 in order
 ## Data structure
 [Link to Figma](https://www.figma.com/file/9fwFjEUBIyc3QfGHJ2qxAr/Restaurant-model?node-id=0%3A1)
 
+[Project document](https://drive.google.com/file/d/1zPkwykzrs9nOeaw-IbQI58gjre_4j844/view?usp=sharing):
+This document presents general information and details of the Restaurants list demo. It contains all relevant information about the demo and helps during the development of the project.
+
 <!-- GETTING STARTED -->
 ## WIP: Getting Started
 
@@ -104,7 +107,7 @@ The purpose of this project is to implement a development with React 18 in order
 <!-- USAGE EXAMPLES -->
 ## WIP: Usage
 
-_For more examples, please refer to the [Project document](https://docs.google.com/document/d/1V_hsKyKSSoYEf_wb1n5epqy5IbGWbrwfe60JlldxD3Y/edit?usp=sharing)_
+_For more examples, please refer to the [Project document](https://drive.google.com/file/d/1zPkwykzrs9nOeaw-IbQI58gjre_4j844/view?usp=sharing)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
