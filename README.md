@@ -2,6 +2,9 @@
 
 Restaurants list demo created by Rocio Piotti provides the user with a list of restaurants and a map that shows their location. Each restaurant can be added to favorites. The list is sorted alphabetically and filtered by category.
 
+> This is a work in progress demo. Information will be updated.
+
+
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
