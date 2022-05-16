@@ -36,7 +36,10 @@ This demo Restaurants list created by Rocio Piotti provides the user with a list
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="https://raw.githubusercontent.com/rociopiotti/restaurants-list/main/src/images/restaurant-list-screenshot.png" alt="project screenshot" />
+<p align="center">
+  <img src="https://raw.githubusercontent.com/rociopiotti/restaurants-list/main/src/images/restaurant-list-screenshot.png" alt="project screenshot" height="400">
+</p>
+
 
 The purpose of this project is to implement a development with React 18 in order to stay up-to-date with the library's new features.
 
@@ -74,7 +77,7 @@ The purpose of this project is to implement a development with React 18 in order
 
 #### Backend Stack
 
-* [[Mocky](https://designer.mocky.io/)
+* [Mocky](https://designer.mocky.io/)
 
 #### CI/CD
 
@@ -137,7 +140,7 @@ Rocío Piotti - [LinkedIn](https://www.linkedin.com/in/rocio-piotti/)
 <!-- ACKNOWLEDGMENTS -->
 ## WIP: Acknowledgments
 * [Random ID Generator](https://www.345tool.com/generator/random-id-generator)
-*
+* [Pexels](https://www.pexels.com/es-es/)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
