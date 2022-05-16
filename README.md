@@ -149,7 +149,7 @@ _For more examples, please refer to the [Project document](https://drive.google.
 - [ ] Favorite list items.
 - [ ] Filter list.
 - [ ] Sort  list.
-- [ ] OpenStreetMapI integration.
+- [ ] OpenStreetMap integration.
 - [ ] Deployment in Netlify.
 
 
