@@ -15,6 +15,7 @@ Restaurants list demo created by Rocio Piotti provides the user with a list of r
     <li><a href="#wireframes">Wireframes</a></li>
     <li><a href="#tasks">Tasks</a></li>
     <li><a href="#data-structure">Data structure</a></li>
+    <li><a href="#project-details">Project details</a></li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
@@ -91,8 +92,9 @@ The purpose of this project is to implement a development with React 18 in order
 ## Data structure
 [Link to Figma](https://www.figma.com/file/9fwFjEUBIyc3QfGHJ2qxAr/Restaurant-model?node-id=0%3A1)
 
-[Project document](https://drive.google.com/file/d/1zPkwykzrs9nOeaw-IbQI58gjre_4j844/view?usp=sharing):
-This document presents general information and details of the Restaurants list demo. It contains all relevant information about the demo and helps during the development of the project.
+## Project details
+[Link](https://drive.google.com/file/d/1erA3gf9eFcfQiNiuickz1NjY-5EKfDGa/view?usp=sharing):
+This document presents general information and details of the Restaurants list demo. It contains all relevant information about the demo.
 
 <!-- GETTING STARTED -->
 ## WIP: Getting Started
