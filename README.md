@@ -94,7 +94,7 @@ The purpose of this project is to implement a development with React 18 in order
 
 ## Project details
 [Link](https://drive.google.com/file/d/1erA3gf9eFcfQiNiuickz1NjY-5EKfDGa/view?usp=sharing):
-This document presents general information and details of the Restaurants list demo. It contains all relevant information about the demo.
+This document presents details of the Restaurants list demo.
 
 <!-- GETTING STARTED -->
 ## WIP: Getting Started
