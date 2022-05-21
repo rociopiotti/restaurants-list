@@ -1,11 +1,22 @@
 import React from 'react';
+import { Chip } from './childs';
 
-const Filters = () => {
-  return (
-    <div className="filters">
-		<h1>Filters</h1>
-    </div>
-  );
-}
+import './filters.scss';
+
+const Filters = (): JSX.Element => {
+	return (
+		<div className="filters">
+			<Chip label="LABEL" />
+			<Chip label="LABEL" />
+			<Chip label="LABEL" />
+			<Chip label="LABEL" />
+			<Chip label="LABEL" />
+			<Chip label="LABEL" />
+			<Chip label="LABEL" />
+			<Chip label="LABEL" />
+			<Chip label="LABEL" />
+		</div>
+	);
+};
 
 export default Filters;
