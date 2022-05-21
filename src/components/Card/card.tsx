@@ -23,15 +23,23 @@ const Card = ({ title, princeRange, address, foodType }: { [key: string]: any })
 					alt="placeholder"
 				/>
 			</Carousel>
-			<div>
+			<div className="title-container">
 				<h2>{title}</h2>
 				<button className="icon-button">
-					<Icon className="faStar" type="faStar" />
+					<Icon iconClass="faStar" type="faStar" />
 				</button>
 			</div>
-			<p>{princeRange}</p>
-			<p>{address}</p>
-			<p>{foodType}</p>
+			<p className="price-range" title={princeRange}>
+				{princeRange}
+			</p>
+			<div className="address">
+				<Icon iconClass="faLocationDot" type="faLocationDot" />
+				<p title={address}>{address}</p>
+			</div>
+			<div className="food-type">
+				<Icon iconClass="faPepperHot" type="faPepperHot" />
+				<p title={foodType}>{foodType}</p>
+			</div>
 		</article>
 	);
 };

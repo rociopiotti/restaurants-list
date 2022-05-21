@@ -56,7 +56,6 @@ const Carousel = ({ children }: ICarousel): JSX.Element => {
 						<span />
 					</button>
 				)}
-
 				<div className="carousel-content-wrapper" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}>
 					<div className="carousel-content" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
 						{children}

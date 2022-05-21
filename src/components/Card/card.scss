@@ -1,8 +1,61 @@
 .card {
-	border: thin solid blue;
+	border: thin solid red;
+
 	.icon-button {
 		border: none;
 	}
+
+	.title-container {
+		height: auto;
+		display: flex;
+		justify-content: space-between;
+		align-content: center;
+		padding: 0.5rem;
+
+		h2 {
+			margin: 0;
+			align-self: center;
+		}
+
+		.icon-button {
+			font-size: 1.8rem;
+			padding: 0;
+		}
+	}
+
+	.price-range {
+		margin: 0.5rem;
+	}
+
+	.address,
+	.food-type {
+		display: flex;
+		flex-direction: row;
+		align-content: center;
+		margin: 0.5rem;
+
+		p {
+			margin: 0;
+			align-self: center;
+			font-size: 0.8rem;
+		}
+	}
+}
+
+.icon.faLocationDot,
+.icon.faPepperHot {
+	padding-right: 0.5rem;
+	align-self: center;
 }
 
 
+@media screen and (min-width: 780px) {
+
+	.address,
+	.food-type {
+
+		p {
+			font-size: 1rem;
+		}
+	}
+}
