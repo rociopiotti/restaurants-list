@@ -1,10 +1,18 @@
 import React from 'react';
-import './map.scss'
+import { MapContainer as LeafMap, TileLayer, Marker, Popup } from 'react-leaflet';
+import './map.scss';
 
 const Map = (): JSX.Element => {
 	return (
 		<div className="map">
-			<h1>Map</h1>
+			<LeafMap center={[59.95, 30.33]} zoom={11} style={{ height: '45vh' }}>
+				<TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+				<Marker position={[59.95, 30.33]}>
+					<Popup>
+						A pretty CSS3 popup. <br /> Easily customizable.
+					</Popup>
+				</Marker>
+			</LeafMap>
 		</div>
 	);
 };

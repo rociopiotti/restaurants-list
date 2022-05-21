@@ -1,6 +1,7 @@
-.card {
-	border: thin solid red;
+@import '../../utils/variables.scss';
 
+.card {
+	background-color: $secondary-color-3;
 	.icon-button {
 		border: none;
 	}
@@ -18,13 +19,14 @@
 		}
 
 		.icon-button {
-			font-size: 1.8rem;
+			font-size: 2rem;
 			padding: 0;
 		}
 	}
 
 	.price-range {
-		margin: 0.5rem;
+		margin: 0;
+		padding: 0.5rem;
 	}
 
 	.address,
@@ -32,7 +34,7 @@
 		display: flex;
 		flex-direction: row;
 		align-content: center;
-		margin: 0.5rem;
+		padding: 0.5rem;
 
 		p {
 			margin: 0;
