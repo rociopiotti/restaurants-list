@@ -1,4 +1,4 @@
-import React, { createContext, useMemo } from 'react';
+import React, { createContext, useMemo, useState } from 'react';
 import { useQuery } from 'react-query';
 import { constants } from '../utils';
 import { useFetch } from '../hooks';
@@ -16,30 +16,24 @@ const DataContext = createContext({
 });
 
 const DataContextProvider = ({ children }: any): JSX.Element => {
-	const { getProducts } = useFetch(constants.API.RESTAURANT_API.url);
+	const [restaurantsData, setRestaurantData] = useState(undefined);
 	const { getProducts: getFoodType } = useFetch(constants.API.FOOD_TYPE_API.url);
 	const { getProducts: getPriceRange } = useFetch(constants.API.PRINCE_RANGE_API.url);
-	const { data, isSuccess: onSuccessRestaurant } = useQuery('restaurants', getProducts);
 	const { data: foodType, isSuccess: onSuccessFoodType } = useQuery('foodType', getFoodType);
 	const { data: princeRange, isSuccess: onSuccessPriceRange } = useQuery('priceRange', getPriceRange);
 
+
+
 	const state = useMemo((): { [key: string]: any } => {
 		return {
-			restaurants: data?.content,
 			priceRange: princeRange?.content,
 			foodType: foodType?.content,
-			onSuccessRestaurant,
 			onSuccessFoodType,
 			onSuccessPriceRange,
+			setRestaurantData,
+			restaurantsData
 		};
-	}, [
-		data?.content,
-		princeRange?.content,
-		foodType?.content,
-		onSuccessRestaurant,
-		onSuccessFoodType,
-		onSuccessPriceRange,
-	]);
+	}, [princeRange?.content, foodType?.content, onSuccessFoodType, onSuccessPriceRange, restaurantsData]);
 	return <DataContext.Provider value={state as any}>{children}</DataContext.Provider>;
 };
 

@@ -5,7 +5,7 @@ import './map.scss';
 import 'leaflet/dist/leaflet.css';
 
 const Map = (): JSX.Element => {
-	const { restaurants, onSuccessRestaurant } = useContext(DataContext) as any;
+	const { restaurantsData, onSuccessRestaurant } = useContext(DataContext) as any;
 	useEffect(() => {
 		// eslint-disable-next-line @typescript-eslint/no-var-requires, global-require
 		const L = require('leaflet');
@@ -16,8 +16,8 @@ const Map = (): JSX.Element => {
 		<div className="map">
 			<LeafMap center={[40.73207085189651, -73.95145454201108]} zoom={12} className="leadMap">
 				<TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-				{onSuccessRestaurant && restaurants !== undefined ? (
-					restaurants.map(({ position, address }: any, index: number) => {
+				{restaurantsData !== undefined ? (
+					restaurantsData.map(({ position, address }: any, index: number) => {
 						return (
 							// TODO CHANGE POSITION PROP IN RESPONSE and id
 							// eslint-disable-next-line react/no-array-index-key

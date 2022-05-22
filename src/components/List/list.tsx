@@ -1,11 +1,18 @@
 import React, { useState, useEffect, useContext, useCallback } from 'react';
+import { useQuery } from 'react-query';
+import { useFetch } from '../../hooks';
+import { constants } from '../../utils';
 import { DataContext } from '../../context/dataContext';
 import { Controls, Card } from '..';
 import './list.scss';
 
 const List = (): JSX.Element => {
-	const { restaurants, priceRange, foodType, onSuccessRestaurant, onSuccessFoodType, onSuccessPriceRange } =
+	const { restaurantsData, setRestaurantData, foodType, priceRange, onSuccessFoodType, onSuccessPriceRange } =
 		useContext(DataContext) as any;
+
+	const { getProducts } = useFetch(constants.API.RESTAURANT_API.url);
+	const { data, isSuccess: onSuccessRestaurant } = useQuery('restaurants', getProducts);
+
 	const [isLoading, setIsloading] = useState(true);
 
 	const findPrice = useCallback(
@@ -32,7 +39,16 @@ const List = (): JSX.Element => {
 	};
 
 	useEffect(() => {
+		if (!onSuccessRestaurant) return;
+		console.log('AGAIN');
+
+		setRestaurantData(data.content);
+		setIsloading(false);
+	}, [onSuccessRestaurant]);
+
+	useEffect(() => {
 		if (onSuccessRestaurant && onSuccessFoodType && onSuccessPriceRange) {
+			console.log('HERE');
 			setIsloading(false);
 		}
 	}, [priceRange, foodType, onSuccessRestaurant, onSuccessFoodType, onSuccessPriceRange]);
@@ -45,17 +61,19 @@ const List = (): JSX.Element => {
 					<p>Loading restaurants</p>
 				) : (
 					<ul className="list">
-						{restaurants?.map(({ id, name, address, priceRange: price, foodType: type, images }: any) => (
-							<li className="list-item" key={id}>
-								<Card
-									title={name}
-									princeRange={findPrice(price)}
-									address={address}
-									foodType={joinFoodTypes(type)}
-									images={images}
-								/>
-							</li>
-						))}
+						{restaurantsData?.map(
+							({ id, name, address, priceRange: price, foodType: type, images }: any) => (
+								<li className="list-item" key={id}>
+									<Card
+										title={name}
+										princeRange={findPrice(price)}
+										address={address}
+										foodType={joinFoodTypes(type)}
+										images={images}
+									/>
+								</li>
+							),
+						)}
 					</ul>
 				)}
 			</div>
