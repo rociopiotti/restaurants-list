@@ -1,5 +1,7 @@
+import React from 'react';
+
+// TODO TYPE CUSTOM HOOK
 interface IUseFetch {
-	// TODO TYPE response
 	getProducts(): Promise<any>;
 }
 
