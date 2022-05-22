@@ -5,7 +5,7 @@ import './map.scss';
 const Map = (): JSX.Element => {
 	return (
 		<div className="map">
-			<LeafMap center={[59.95, 30.33]} zoom={11} style={{ height: '45vh' }}>
+			<LeafMap center={[59.95, 30.33]} zoom={11} className="leadMap">
 				<TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 				<Marker position={[59.95, 30.33]}>
 					<Popup>

@@ -1,5 +1,14 @@
 .controls {
+	position: fixed;
+	background-color: #FFF;
 	overflow-x: hidden;
 	padding: 0.5rem;
 	width: 100%;
+	z-index: 2;
+
+	p {
+		margin: 0.5rem 0 0;
+		font-size: 0.8rem;
+		text-align: right;
+	}
 }

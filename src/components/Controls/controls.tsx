@@ -7,6 +7,7 @@ const Controls = (): JSX.Element => {
 		<div className="controls">
 			<Sort />
 			<Filters />
+			<p>places found</p>
 		</div>
 	);
 };

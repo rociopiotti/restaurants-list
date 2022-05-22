@@ -1,7 +1,8 @@
-@import '../../utils/variables.scss';
+@import '../../styles/variables.scss';
 
 .card {
 	background-color: $secondary-color-3;
+	margin-bottom: 0.5rem;
 	.icon-button {
 		border: none;
 	}
@@ -19,7 +20,7 @@
 		}
 
 		.icon-button {
-			font-size: 2rem;
+			font-size: 1.5rem;
 			padding: 0;
 		}
 	}
