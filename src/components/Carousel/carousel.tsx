@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Icon } from '..';
 import './carousel.scss';
 
 interface ICarousel {
@@ -53,7 +54,7 @@ const Carousel = ({ children }: ICarousel): JSX.Element => {
 			<div className="carousel-wrapper">
 				{currentIndex === 1 && (
 					<button className="left-arrow" onClick={prev}>
-						<span />
+						<Icon iconClass="faChevronLeft" type="faChevronLeft" />
 					</button>
 				)}
 				<div className="carousel-content-wrapper" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}>
@@ -63,7 +64,7 @@ const Carousel = ({ children }: ICarousel): JSX.Element => {
 				</div>
 				{currentIndex === 0 && (
 					<button className="right-arrow" onClick={next}>
-						<span />
+						<Icon iconClass="faChevronRight" type="faChevronRight" />
 					</button>
 				)}
 			</div>

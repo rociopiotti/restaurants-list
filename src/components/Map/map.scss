@@ -1,5 +1,4 @@
 .map {
-	border: thin solid blue;
 	height: 35vh;
 
 	.leadMap {
@@ -10,7 +9,5 @@
 @media screen and (min-width: 780px) {
 	.map {
 		height: 90vh;
-
-		.leadMap {}
 	}
 }

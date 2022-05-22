@@ -1,7 +1,7 @@
 @import '../../styles/variables.scss';
 
 .card {
-	background-color: $secondary-color-3;
+	background-color: $secondary-color-4;
 	margin-bottom: 0.5rem;
 	.icon-button {
 		border: none;
@@ -40,7 +40,7 @@
 		p {
 			margin: 0;
 			align-self: center;
-			font-size: 0.8rem;
+			font-size: 1rem;
 		}
 	}
 }

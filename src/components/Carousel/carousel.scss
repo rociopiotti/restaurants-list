@@ -1,7 +1,10 @@
+@import '../../styles/variables.scss';
+
 .carousel-container {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
+	background-color: $secondary-color-4;
 
 	.carousel-wrapper {
 		display: flex;
@@ -20,6 +23,7 @@
 		transition: all 250ms linear;
 		-ms-overflow-style: none;
 		scrollbar-width: none;
+
 		&::-webkit-scrollbar {
 			display: none;
 		}
@@ -42,29 +46,21 @@
 	width: 0;
 	height: 100%;
 	border: none;
-	background-color: #00000025;
+
+	.icon.faChevronRight,
+	.icon.faChevronLeft {
+		font-size: 1.8rem;
+		color: $secondary-color;
+	}
+
+	&:hover {
+		.icon.faChevronRight,
+		.icon.faChevronLeft  {
+			color: $hover-color;
+		}
+	}
 }
 
 .right-arrow {
-	position: absolute;
-	z-index: 1;
-	top: 50%;
-	transform: translateY(-50%);
-	width: 0;
-	height: 100%;
-	border: none;
-	background-color: #00000025;
-}
-
-.right-arrow {
-	right: 0rem;
-	-webkit-box-shadow: -10px 0px 3px 0px #00000025, 0px 0px 0px 0px #00000025;
-	-moz-box-shadow: -10px 0px 3px 0px #00000025, 0px 0px 0px 0px #00000025;
-	box-shadow: -10px 0px 3px 0px #00000025, 0px 0px 0px 0px #00000025;
-}
-
-.left-arrow {
-	-webkit-box-shadow: 0px 0px 0px 0px #00000025, 10px 0px 3px 0px #00000025;
-	-moz-box-shadow: 0px 0px 0px 0px #00000025, 10px 0px 3px 0px #00000025;
-	box-shadow: 0px 0px 0px 0px #00000025, 10px 0px 3px 0px #00000025;
+	right: 1.188rem;
 }

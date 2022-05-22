@@ -9,4 +9,17 @@
 		font-size: 2rem;
 		font-weight: 700;
 	}
+
+	&.faStar--state-checked {
+		color: $selected-state;
+	}
+
+	&.faStar--state-unchecked {
+		color: $secondary-color;
+	}
+
+	&.sortAZ--state-selected,
+	&.sortZA--state-selected {
+		color: $hover-color;
+	}
 }

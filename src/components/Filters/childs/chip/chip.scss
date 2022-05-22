@@ -10,4 +10,12 @@
 	font-weight: 400;
 	white-space: nowrap;
 	margin: 0.5rem 0.25rem;
+
+	&:hover,
+	&:focus,
+	&:active {
+		outline: transparent;
+		background-color: $secondary-color;
+		color: $primary-color;
+	}
 }
