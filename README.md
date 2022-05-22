@@ -146,12 +146,11 @@ _For more examples, please refer to the [Project document](https://drive.google.
 ## Roadmap
 
 - [x] Mock API to provide restaurant list.
-- [ ] Restaurants list.
-- [ ] Favorite list items.
+- [x] Restaurants list.
 - [ ] Filter list.
 - [ ] Sort  list.
-- [ ] OpenStreetMap integration.
-- [ ] Deployment in Netlify.
+- [x] OpenStreetMap integration.
+- [x] Deployment in Netlify.
 
 
 See the [Jira Backlog](https://rociodevelopment.atlassian.net/) for a full list of tasks.
