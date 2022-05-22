@@ -14,11 +14,12 @@ const Map = (): JSX.Element => {
 
 	return (
 		<div className="map">
-			<LeafMap center={[40.95, -73.93]} zoom={11} className="leadMap">
+			<LeafMap center={[40.73207085189651, -73.95145454201108]} zoom={12} className="leadMap">
 				<TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 				{onSuccessRestaurant && restaurants !== undefined ? (
 					restaurants.map(({ position, address }: any, index: number) => {
 						return (
+							// TODO CHANGE POSITION PROP IN RESPONSE and id
 							// eslint-disable-next-line react/no-array-index-key
 							<Marker key={index + position[0].id} position={[position[0].lat, position[0].long]}>
 								<Popup>{address}</Popup>
