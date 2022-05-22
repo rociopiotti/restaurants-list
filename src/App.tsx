@@ -1,7 +1,7 @@
 import React from 'react';
 import { QueryClientProvider, QueryClient } from 'react-query';
 import { Header, List, Map } from './components';
-import { DataContextProvider } from './context/dataContext';
+import { GlobalStateProvider } from './context/GlobalState';
 
 import './App.scss';
 
@@ -10,7 +10,7 @@ const queryClient = new QueryClient();
 const App = (): JSX.Element => {
 	return (
 		<QueryClientProvider client={queryClient}>
-			<DataContextProvider>
+			<GlobalStateProvider>
 				<main>
 					<Header />
 					<section>
@@ -18,7 +18,7 @@ const App = (): JSX.Element => {
 						<List />
 					</section>
 				</main>
-			</DataContextProvider>
+			</GlobalStateProvider>
 		</QueryClientProvider>
 	);
 };
