@@ -7,6 +7,7 @@ const List = (): JSX.Element => {
 	const { restaurants, priceRange, foodType, onSuccessRestaurant, onSuccessFoodType, onSuccessPriceRange } =
 		useContext(DataContext) as any;
 	const [isLoading, setIsloading] = useState(true);
+
 	const findPrice = useCallback(
 		(priceId: number): string => {
 			return priceRange.find(({ id }: any) => priceId === id)?.range;
@@ -14,15 +15,21 @@ const List = (): JSX.Element => {
 		[priceRange],
 	);
 
-	const findFoodType = useCallback(
-		(foodTypesIds: number[]): string => {
-			return foodType
-				.filter((g: any) => foodTypesIds.includes(g.id))
-				.map((g: any) => g.type)
-				.join(', ');
-		},
-		[foodType],
-	);
+	const includesFoodTypeIds = (foodTypesIds: number[], id: number): boolean => {
+		return foodTypesIds.includes(id);
+	};
+
+	const filterTypesInFoodType = (foodTypesIds: number[]): { [key: string]: any } => {
+		return foodType.filter(({ id }: any) => includesFoodTypeIds(foodTypesIds, id));
+	};
+
+	const mapCurrentFoodTypes = (foodTypesIds: number[]): string[] => {
+		return filterTypesInFoodType(foodTypesIds).map(({ type }: any) => type);
+	};
+
+	const joinFoodTypes = (foodTypesIds: number[]): string => {
+		return mapCurrentFoodTypes(foodTypesIds).join();
+	};
 
 	useEffect(() => {
 		if (onSuccessRestaurant && onSuccessFoodType && onSuccessPriceRange) {
@@ -38,13 +45,14 @@ const List = (): JSX.Element => {
 					<p>Loading restaurants</p>
 				) : (
 					<ul className="list">
-						{restaurants?.map((item: any) => (
-							<li className="list-item" key={item.id}>
+						{restaurants?.map(({ id, name, address, priceRange: price, foodType: type, images }: any) => (
+							<li className="list-item" key={id}>
 								<Card
-									title={item.name}
-									princeRange={findPrice(item.priceRange)}
-									address={item.address}
-									foodType={findFoodType(item.foodType)}
+									title={name}
+									princeRange={findPrice(price)}
+									address={address}
+									foodType={joinFoodTypes(type)}
+									images={images}
 								/>
 							</li>
 						))}
