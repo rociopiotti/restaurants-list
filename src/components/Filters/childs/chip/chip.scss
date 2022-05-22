@@ -1,0 +1,21 @@
+@import '../../../../styles/variables.scss';
+
+.chip {
+	width: auto;
+	padding: 0.25rem 0.5rem;
+	background-color: $primary-color;
+	border: none;
+	border-radius: 0.5rem;
+	font-size: 0.875rem;
+	font-weight: 400;
+	white-space: nowrap;
+	margin: 0.5rem 0.25rem;
+
+	&:hover,
+	&:focus,
+	&:active {
+		outline: transparent;
+		background-color: $secondary-color;
+		color: $primary-color;
+	}
+}
