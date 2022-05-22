@@ -5,7 +5,6 @@ import './card.scss';
 const Card = ({ title, princeRange, address, foodType, images }: { [key: string]: any }): JSX.Element => {
 	const [isChecked, setIsChecked] = useState(false);
 
-	console.log(images);
 	const onClick = (): void => {
 		setIsChecked(!isChecked);
 	};

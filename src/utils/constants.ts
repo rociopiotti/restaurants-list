@@ -2,7 +2,7 @@ const constants = {
 	API: {
 		RESTAURANT_API: {
 			identifier: 'restaurant-list-api-mock',
-			url: 'https://run.mocky.io/v3/27a06887-5538-4217-b5f4-1f95a1b1ca00',
+			url: 'https://run.mocky.io/v3/0bf89452-300e-4acb-a6ed-0b4856b24121',
 		},
 		PRINCE_RANGE_API: {
 			identifier: 'price-range-mock',
