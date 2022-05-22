@@ -64,7 +64,6 @@ const GlobalStateProvider = ({ children }: any): JSX.Element => {
 			);
 
 			setRestaurants(allRestaurants);
-			console.log(foodTypesData)
 			setFoodTypesData(foodType.content);
 		}
 	}, [onSuccessFoodType, onSuccessPriceRange, onSuccessRestaurant]);
