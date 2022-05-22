@@ -6,6 +6,7 @@ Restaurants list demo created by Rocio Piotti provides the user with a list of r
 
 > This is a work in progress demo. Information will be updated.
 
+[Work In Progress DEMO](https://restaurants-list-demo.netlify.app/)
 
 <!-- TABLE OF CONTENTS -->
 <details>
