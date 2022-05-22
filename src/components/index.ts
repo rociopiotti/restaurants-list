@@ -1,6 +1,9 @@
 export { default as Header } from './Header/header';
 export { default as Map } from './Map/map';
 export { default as List } from './List/list';
-export { default as Filters } from './Filters/filters';
-export { default as Drawer } from './Drawer/drawer';
+export { default as Controls } from './Controls/controls';
 export { default as Card } from './Card/card';
+export { default as Sort } from './Sort/sort';
+export { default as Filters } from './Filters/filters';
+export { default as Icon } from './Icon/icon';
+export { default as Carousel } from './Carousel/carousel';

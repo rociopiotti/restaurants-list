@@ -1,0 +1,13 @@
+.map {
+	height: 35vh;
+
+	.leadMap {
+		height: 100%;
+	}
+}
+
+@media screen and (min-width: 780px) {
+	.map {
+		height: 90vh;
+	}
+}
