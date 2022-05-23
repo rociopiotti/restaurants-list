@@ -2,7 +2,17 @@
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
-	.icon-button {
+	.icon-button-left,
+	.icon-button-right {
+		width: 3rem;
 		border: none;
+		font-size: 1.25rem;
+	}
+	.icon-button-left{
+		text-align: left;
+	}
+
+	.icon-button-right {
+		text-align: right;
 	}
 }

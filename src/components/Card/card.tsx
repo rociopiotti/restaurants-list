@@ -29,7 +29,7 @@ const Card = ({ title, princeRange, address, foodType, images }: { [key: string]
 				<p title={address}>{address}</p>
 			</div>
 			<div className="food-type">
-				<Icon iconClass="faPepperHot" type="faPepperHot" />
+				<Icon iconClass="faPepperHot" type="faUtensils" />
 				<p title={foodType}>{foodType}</p>
 			</div>
 		</article>

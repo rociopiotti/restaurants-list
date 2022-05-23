@@ -23,10 +23,10 @@ const Sort = (): JSX.Element => {
 
 	return (
 		<div className="sort">
-			<button className="icon-button" onClick={onClickSortAZ}>
+			<button className="icon-button-left" onClick={onClickSortAZ}>
 				<Icon iconClass={isSelected.sortAZ ? 'sortAZ--state-selected' : 'sortAZ'} type="sortAZ" />
 			</button>
-			<button className="icon-button" onClick={onClickSortZA}>
+			<button className="icon-button-right" onClick={onClickSortZA}>
 				<Icon iconClass={isSelected.sortZA ? 'sortZA--state-selected' : 'sortZA'} type="sortZA" />
 			</button>
 		</div>

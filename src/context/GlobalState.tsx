@@ -1,13 +1,8 @@
-import React, { createContext, useEffect, useMemo, useState } from 'react';
+import React, { createContext, useCallback, useEffect, useMemo, useState } from 'react';
 import { useQuery } from 'react-query';
 import { constants } from '../utils';
 import { useFetch } from '../hooks';
 import { IResponseFoodTypes, IResponseRestaurantsData, IGlobalStateProvider, IRestaurantsData } from './models';
-
-/**
- * NOTE: context used for demo purposes in real case scenario with react query context might be sufficient
- *
- */
 
 const GlobalState = createContext({
 	restaurants: [],
@@ -25,34 +20,47 @@ const GlobalStateProvider = ({ children }: IGlobalStateProvider): JSX.Element =>
 	const { getData: getFoodType } = useFetch(constants.API.FOOD_TYPE_API.url);
 	const { getData: getPriceRange } = useFetch(constants.API.PRINCE_RANGE_API.url);
 	const { data: restaurantsData, isSuccess: onSuccessRestaurant } = useQuery('restaurants', getRestaurants);
-	const { data: foodType, isSuccess: onSuccessFoodType } = useQuery('foodType', getFoodType);
+	const { data: foodTypesResponse, isSuccess: onSuccessFoodType } = useQuery('foodType', getFoodType);
 	const { data: priceRange, isSuccess: onSuccessPriceRange } = useQuery('priceRange', getPriceRange);
 	// #endregion hooks
 
 	// #region methods
-	// TODO: REFACT ALL METHODS IN HOOK OR UTIL FUNCTIONS
-	// TODO: REFACT IN SEPARATE METHOS
-	const findPrice = (priceId: number): string => {
-		return priceRange.content.find(({ id }: any) => priceId === id)?.range;
-	};
+	// TODO: REFACT ALL BUSINESS LOGIC METHODS IN HOOK OR UTILS FUNCTIONS
+	const findPrice = useCallback(
+		(priceId: number): string => {
+			return priceRange.content.find(({ id }: any) => priceId === id)?.range;
+		},
+		[priceRange],
+	);
 
-	const includesFoodTypeIds = (foodTypesIds: number[], id: number): boolean => {
+	const includesFoodTypeIds = useCallback((foodTypesIds: number[], id: number): boolean => {
 		return foodTypesIds.includes(id);
-	};
+	}, []);
 
-	const filterTypesInFoodType = (foodTypesIds: number[]): IResponseFoodTypes[] => {
-		return foodType.content.filter(({ id }: IResponseFoodTypes) => includesFoodTypeIds(foodTypesIds, id));
-	};
+	const filterTypesInFoodType = useCallback(
+		(foodTypesIds: number[]): IResponseFoodTypes[] => {
+			return foodTypesResponse.content.filter(({ id }: IResponseFoodTypes) =>
+				includesFoodTypeIds(foodTypesIds, id),
+			);
+		},
+		[foodTypesResponse, includesFoodTypeIds],
+	);
 
-	const mapCurrentFoodTypes = (foodTypesIds: number[]): string[] => {
-		return filterTypesInFoodType(foodTypesIds).map(({ type }: IResponseFoodTypes) => type);
-	};
+	const mapCurrentFoodTypes = useCallback(
+		(foodTypesIds: number[]): string[] => {
+			return filterTypesInFoodType(foodTypesIds).map(({ type }: IResponseFoodTypes) => type);
+		},
+		[filterTypesInFoodType],
+	);
 
-	const joinFoodTypes = (foodTypesIds: number[]): string => {
-		return mapCurrentFoodTypes(foodTypesIds).join();
-	};
+	const joinFoodTypes = useCallback(
+		(foodTypesIds: number[]): string => {
+			return mapCurrentFoodTypes(foodTypesIds).join(', ');
+		},
+		[mapCurrentFoodTypes],
+	);
 
-	const mapRestaurantsData = (): IRestaurantsData[] => {
+	const mapRestaurantsData = useCallback((): IRestaurantsData[] => {
 		const allRestaurants: IRestaurantsData[] = [];
 		restaurantsData.content.map(
 			({ id, name, address, position, priceRange: price, foodType: type, images }: IResponseRestaurantsData) => {
@@ -70,60 +78,69 @@ const GlobalStateProvider = ({ children }: IGlobalStateProvider): JSX.Element =>
 			},
 		);
 		return allRestaurants;
-	};
+	}, [findPrice, joinFoodTypes, restaurantsData]);
 
-	const sortAZRestaurantList = (): IRestaurantsData[] => {
-		const sortedList = mapRestaurantsData().sort((a: any, b: any) =>
+	const sortAZRestaurantList = useCallback((): IRestaurantsData[] => {
+		return mapRestaurantsData().sort((a: IRestaurantsData, b: IRestaurantsData) =>
 			a.name.toLowerCase().localeCompare(b.name.toLowerCase()),
 		);
+	}, [mapRestaurantsData]);
 
-		return sortedList;
-	};
-
-	const sortZARestaurantList = (): IRestaurantsData[] => {
-		const sortedList = mapRestaurantsData().sort((a: any, b: any) =>
+	const sortZARestaurantList = useCallback((): IRestaurantsData[] => {
+		return mapRestaurantsData().sort((a: IRestaurantsData, b: IRestaurantsData) =>
 			b.name.toLowerCase().localeCompare(a.name.toLowerCase()),
 		);
+	}, [mapRestaurantsData]);
 
-		return sortedList;
-	};
-
-	const setSortAZ = (): void => {
+	const setSortAZ = useCallback((): void => {
 		setRestaurants(sortAZRestaurantList());
-	};
+	}, [sortAZRestaurantList]);
 
-	const setSortZA = (): void => {
+	const setSortZA = useCallback((): void => {
 		setRestaurants(sortZARestaurantList());
-	};
+	}, [sortZARestaurantList]);
 
-	const filterRestaurantList = (currentID: number): IRestaurantsData[] => {
-		const allRestaurants: IRestaurantsData[] = [];
+	// TODO: REFACT IN SIMPlER FUNCTIONS
+	const filterRestaurantList = useCallback(
+		(currentID: number): IRestaurantsData[] => {
+			const allRestaurants: IRestaurantsData[] = [];
+			restaurantsData.content
+				.map((restaurant: IResponseRestaurantsData) => restaurant)
+				.filter(({ foodType }: IResponseRestaurantsData) => foodType.includes(currentID))
+				.map(
+					({
+						id,
+						name,
+						address,
+						position,
+						priceRange: price,
+						foodType: type,
+						images,
+					}: IResponseRestaurantsData) => {
+						const dataDef: IRestaurantsData = {
+							id,
+							name,
+							address,
+							position,
+							priceRange: findPrice(Number(price)),
+							foodType: joinFoodTypes(type),
+							images,
+						};
 
-		const filtered = restaurantsData.content
-			.map((item: any) => item)
-			.filter((item: any) => item.foodType.includes(currentID));
+						return allRestaurants.push(dataDef);
+					},
+				);
+			return allRestaurants;
+		},
+		[findPrice, joinFoodTypes, restaurantsData],
+	);
 
-		filtered.map(
-			({ id, name, address, position, priceRange: price, foodType: type, images }: IResponseRestaurantsData) => {
-				const dataDef: IRestaurantsData = {
-					id,
-					name,
-					address,
-					position,
-					priceRange: findPrice(Number(price)),
-					foodType: joinFoodTypes(type),
-					images,
-				};
-
-				return allRestaurants.push(dataDef);
-			},
-		);
-		return allRestaurants;
-	};
-
-	const setFilteredRestaurants = (currentID: number): void => {
-		setRestaurants(filterRestaurantList(currentID));
-	};
+	const setFilteredRestaurants = useCallback(
+		(currentID: number): void => {
+			setRestaurants(filterRestaurantList(currentID));
+		},
+		[filterRestaurantList],
+	);
 	// #endregion methods
 
 	// #region effect
@@ -131,7 +148,7 @@ const GlobalStateProvider = ({ children }: IGlobalStateProvider): JSX.Element =>
 		if (onSuccessRestaurant && onSuccessFoodType && onSuccessPriceRange) {
 			const allRestaurants: IRestaurantsData[] = mapRestaurantsData();
 			setRestaurants(allRestaurants);
-			setFoodTypesData(foodType.content);
+			setFoodTypesData(foodTypesResponse.content);
 		}
 	}, [onSuccessFoodType, onSuccessPriceRange, onSuccessRestaurant]);
 	// #endregion effect
@@ -144,7 +161,7 @@ const GlobalStateProvider = ({ children }: IGlobalStateProvider): JSX.Element =>
 			setSortAZ,
 			setSortZA,
 		};
-	}, [foodTypesData, restaurants]);
+	}, [foodTypesData, restaurants, setFilteredRestaurants, setSortAZ, setSortZA]);
 	return <GlobalState.Provider value={value as any}>{children}</GlobalState.Provider>;
 };
 

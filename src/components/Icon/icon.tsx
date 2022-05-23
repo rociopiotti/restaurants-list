@@ -3,7 +3,6 @@ import './Icon.scss';
 
 // FONT-AWESOME:
 import {
-	faBars,
 	faSortAlphaDown,
 	faSortAlphaUp,
 	faChevronDown,
@@ -11,7 +10,7 @@ import {
 	faChevronRight,
 	faStar,
 	faLocationDot,
-	faPepperHot,
+	faUtensils,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -19,8 +18,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Icon = ({ type, iconClass }: { [key: string]: any }): JSX.Element => {
 	let faIcon;
 	switch (type) {
-		case 'burger':
-			faIcon = faBars;
+		case 'faUtensils':
+			faIcon = faUtensils;
 			break;
 		case 'faStar':
 			faIcon = faStar;
@@ -43,9 +42,7 @@ const Icon = ({ type, iconClass }: { [key: string]: any }): JSX.Element => {
 		case 'faLocationDot':
 			faIcon = faLocationDot;
 			break;
-		case 'faPepperHot':
-			faIcon = faPepperHot;
-			break;
+
 		default:
 			faIcon = null;
 			break;
