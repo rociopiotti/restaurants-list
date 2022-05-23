@@ -19,7 +19,11 @@ const Carousel = ({ children }: ICarousel): JSX.Element => {
 					</button>
 				)}
 				<div className="carousel-content-wrapper">
-					<div className="carousel-content" style={{ transform: `translateX(-${currentIndex * 50}%)` }}>
+					<div
+						className="carousel-content"
+						style={{ transform: `translateX(-${currentIndex * 50}%)` }}
+						data-testid="carousel-element"
+					>
 						{children}
 					</div>
 				</div>
