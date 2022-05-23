@@ -2,20 +2,20 @@ import React, { createContext, useEffect, useMemo, useState } from 'react';
 import { useQuery } from 'react-query';
 import { constants } from '../utils';
 import { useFetch } from '../hooks';
-import {IResponseRestaurantsData} from './models';
+import { IResponseFoodTypes, IResponseRestaurantsData, IGlobalStateProvider, IRestaurantsData } from './models';
+
 /**
  * NOTE: context used for demo purposes in real case scenario with react query context might be sufficient
  *
  */
 
-// TODO INTERFACE FOR CONTEXT
 const GlobalState = createContext({
 	restaurants: [],
 	foodTypesData: [],
 });
 
-const GlobalStateProvider = ({ children }: any): JSX.Element => {
-	const [restaurants, setRestaurants] = useState([]);
+const GlobalStateProvider = ({ children }: IGlobalStateProvider): JSX.Element => {
+	const [restaurants, setRestaurants] = useState([] as any);
 	const [foodTypesData, setFoodTypesData] = useState([]);
 
 	const { getData: getRestaurants } = useFetch(constants.API.RESTAURANT_API.url);
@@ -33,28 +33,28 @@ const GlobalStateProvider = ({ children }: any): JSX.Element => {
 		return foodTypesIds.includes(id);
 	};
 
-	const filterTypesInFoodType = (foodTypesIds: number[]): { [key: string]: any } => {
-		return foodType.content.filter(({ id }: any) => includesFoodTypeIds(foodTypesIds, id));
+	const filterTypesInFoodType = (foodTypesIds: number[]): IResponseFoodTypes[] => {
+		return foodType.content.filter(({ id }: IResponseFoodTypes) => includesFoodTypeIds(foodTypesIds, id));
 	};
 
 	const mapCurrentFoodTypes = (foodTypesIds: number[]): string[] => {
-		return filterTypesInFoodType(foodTypesIds).map(({ type }: any) => type);
+		return filterTypesInFoodType(foodTypesIds).map(({ type }: IResponseFoodTypes) => type);
 	};
 
 	const joinFoodTypes = (foodTypesIds: number[]): string => {
 		return mapCurrentFoodTypes(foodTypesIds).join();
 	};
 
-	const mapRestaurantsData = (): IResponseRestaurantsData[] => {
-		const allRestaurants: any = [];
+	const mapRestaurantsData = (): IRestaurantsData[] => {
+		const allRestaurants: IRestaurantsData[] = [];
 		restaurantsData.content.map(
-			({ id, name, address, position, priceRange: price, foodType: type, images }: any) => {
-				const dataDef = {
+			({ id, name, address, position, priceRange: price, foodType: type, images }: IResponseRestaurantsData) => {
+				const dataDef: IRestaurantsData = {
 					id,
 					name,
 					address,
 					position,
-					priceRange: findPrice(price),
+					priceRange: findPrice(Number(price)),
 					foodType: joinFoodTypes(type),
 					images,
 				};
@@ -67,7 +67,8 @@ const GlobalStateProvider = ({ children }: any): JSX.Element => {
 
 	useEffect(() => {
 		if (onSuccessRestaurant && onSuccessFoodType && onSuccessPriceRange) {
-			setRestaurants(mapRestaurantsData());
+			const allRestaurants: IRestaurantsData[] = mapRestaurantsData();
+			setRestaurants(allRestaurants);
 			setFoodTypesData(foodType.content);
 		}
 	}, [onSuccessFoodType, onSuccessPriceRange, onSuccessRestaurant]);

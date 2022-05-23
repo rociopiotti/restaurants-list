@@ -1,2 +1,3 @@
 export * from './responses.model';
-export type { IResponseRestaurantsData } from './restaurants.model';
+export type { IRestaurantsData } from './restaurants.model';
+export type { IGlobalStateProvider } from './GlobalState.model';

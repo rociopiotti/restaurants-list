@@ -1,11 +1,11 @@
 import { IPosition, IResponseImages } from '.';
 
-export interface IResponseRestaurantsData {
+export interface IRestaurantsData {
 	id: string;
 	name: string;
 	address: string;
 	position: IPosition[];
-	priceRange: number;
-	foodType: number[];
+	priceRange: string;
+	foodType: string;
 	images: IResponseImages[];
 }
