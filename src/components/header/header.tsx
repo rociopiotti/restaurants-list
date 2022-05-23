@@ -4,7 +4,7 @@ import './Header.scss';
 
 const Header = (): JSX.Element => {
 	return (
-		<header className={constants.CLASSNAMES.HEADER.TITLE}>
+		<header className={constants.CLASSNAMES.HEADER.CONTAINER}>
 			<h1>{constants.MESSAGES.HEADER.TITLE}</h1>
 		</header>
 	);

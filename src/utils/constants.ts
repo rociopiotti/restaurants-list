@@ -83,7 +83,7 @@ const constants = {
 			CONTAINER: 'filters',
 		},
 		HEADER: {
-			TITLE: 'title',
+			CONTAINER: 'header',
 		},
 		ICON: 'icon',
 		LIST: {
