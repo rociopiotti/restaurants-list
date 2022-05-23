@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from 'react';
 
-// TODO TYPE CUSTOM HOOK
-export const useCarousel = (childrenLenght: number): any => {
+interface IUseCarousel {
+	readonly currentIndex: number;
+	prev(): void;
+	next(): void;
+	handleTouchMove(e: React.TouchEvent): void;
+	handleTouchStart(e: React.TouchEvent): void;
+}
+
+export const useCarousel = (childrenLenght: number): IUseCarousel => {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [length, setLength] = useState(childrenLenght);
 	const [touchPosition, setTouchPosition] = useState(null as any);

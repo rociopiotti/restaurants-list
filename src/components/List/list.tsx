@@ -1,45 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { GlobalState } from '../../context/GlobalState';
 import { Controls, Card } from '..';
 import './list.scss';
 
 const List = (): JSX.Element => {
+	const { restaurants } = useContext(GlobalState);
+
 	return (
 		<div className="list-container">
 			<Controls />
 			<div className="list-wrapper">
 				<ul className="list">
-					<li className="list-item">
-						<Card
-							title="Restauran title"
-							princeRange="€€"
-							address="640 McLean Ave, Yonkers, NY 10705, Estados Unidos"
-							foodType="Mexican"
-						/>
-					</li>
-					<li className="list-item">
-						<Card
-							title="Restauran title"
-							princeRange="€€"
-							address="640 McLean Ave, Yonkers, NY 10705, Estados Unidos"
-							foodType="Mexican"
-						/>
-					</li>
-					<li className="list-item">
-						<Card
-							title="Restauran title"
-							princeRange="€€"
-							address="640 McLean Ave, Yonkers, NY 10705, Estados Unidos"
-							foodType="Mexican"
-						/>
-					</li>
-					<li className="list-item">
-						<Card
-							title="Restauran title"
-							princeRange="€€"
-							address="640 McLean Ave, Yonkers, NY 10705, Estados Unidos"
-							foodType="Mexican"
-						/>
-					</li>
+					{restaurants?.map(({ id, name, address, priceRange, foodType, images }: any) => (
+						<li className="list-item" key={id}>
+							<Card
+								title={name}
+								princeRange={priceRange}
+								address={address}
+								foodType={foodType}
+								images={images}
+							/>
+						</li>
+					))}
 				</ul>
 			</div>
 		</div>

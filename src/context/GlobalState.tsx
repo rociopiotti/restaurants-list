@@ -2,6 +2,7 @@ import React, { createContext, useEffect, useMemo, useState } from 'react';
 import { useQuery } from 'react-query';
 import { constants } from '../utils';
 import { useFetch } from '../hooks';
+import {IResponseRestaurantsData} from './models';
 /**
  * NOTE: context used for demo purposes in real case scenario with react query context might be sufficient
  *
@@ -44,7 +45,7 @@ const GlobalStateProvider = ({ children }: any): JSX.Element => {
 		return mapCurrentFoodTypes(foodTypesIds).join();
 	};
 
-	const mapRestaurantsData = (): [] => {
+	const mapRestaurantsData = (): IResponseRestaurantsData[] => {
 		const allRestaurants: any = [];
 		restaurantsData.content.map(
 			({ id, name, address, position, priceRange: price, foodType: type, images }: any) => {
