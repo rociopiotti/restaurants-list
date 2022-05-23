@@ -1,48 +1,51 @@
 import React, { useState } from 'react';
+import { constants } from '../../utils';
+import { IRestaurantsData, IResponseImages } from '../../context/models';
 import { Icon, Carousel } from '..';
-import './card.scss';
+import './Card.scss';
 
-const Card = ({ title, princeRange, address, foodType }: { [key: string]: any }): JSX.Element => {
+const Card = ({
+	id: cardId,
+	name,
+	priceRange,
+	address,
+	foodType,
+	images,
+}: Omit<IRestaurantsData, 'position'>): JSX.Element => {
 	const [isChecked, setIsChecked] = useState(false);
 
 	const onClick = (): void => {
 		setIsChecked(!isChecked);
 	};
 	return (
-		<article className="card">
+		<article id={cardId} className={constants.CLASSNAMES.CARD.COMPONENT}>
 			<Carousel>
-				<img
-					src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=70"
-					alt="placeholder"
-				/>
-				<img
-					src="https://images.pexels.com/photos/2696064/pexels-photo-2696064.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=70"
-					alt="placeholder"
-				/>
-				<img
-					src="https://images.pexels.com/photos/299348/pexels-photo-299348.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=70"
-					alt="placeholder"
-				/>
-				<img
-					src="https://images.pexels.com/photos/2290753/pexels-photo-2290753.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=70"
-					alt="placeholder"
-				/>
+				{images.map(({ id, img }: IResponseImages) => (
+					<img key={id} src={img} alt={constants.MESSAGES.CARD.ALT} />
+				))}
 			</Carousel>
-			<div className="title-container">
-				<h2>{title}</h2>
-				<button className="icon-button" onClick={onClick}>
-					<Icon iconClass={isChecked ? 'faStar--state-checked' : 'faStar--state-unchecked'} type="faStar" />
+			<div className={constants.CLASSNAMES.CARD.TITLE_CONTAINER}>
+				<h2>{name}</h2>
+				<button className={constants.CLASSNAMES.CARD.ICON_BUTTON} onClick={onClick}>
+					<Icon
+						iconClass={
+							isChecked
+								? constants.CLASSNAMES.CARD.ICON_CHECKED
+								: constants.CLASSNAMES.CARD.ICON_UNCHECKED
+						}
+						type={constants.ICON_TYPES.STAR}
+					/>
 				</button>
 			</div>
-			<p className="price-range" title={princeRange}>
-				{princeRange}
+			<p className={constants.CLASSNAMES.CARD.PRICE_RANGE} title={priceRange}>
+				{priceRange}
 			</p>
-			<div className="address">
-				<Icon iconClass="faLocationDot" type="faLocationDot" />
+			<div className={constants.CLASSNAMES.CARD.ADDRESS}>
+				<Icon iconClass={constants.CLASSNAMES.CARD.ICON_CLASS_LOCATION} type={constants.ICON_TYPES.LOCATION} />
 				<p title={address}>{address}</p>
 			</div>
-			<div className="food-type">
-				<Icon iconClass="faPepperHot" type="faPepperHot" />
+			<div className={constants.CLASSNAMES.CARD.FOOD_TYPE}>
+				<Icon iconClass={constants.CLASSNAMES.CARD.ICON_CLASS_FOODTYPE} type={constants.ICON_TYPES.FOODTYPE} />
 				<p title={foodType}>{foodType}</p>
 			</div>
 		</article>

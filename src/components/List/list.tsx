@@ -1,45 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { GlobalState } from '../../context/GlobalState';
+import { IRestaurantsData } from '../../context/models';
 import { Controls, Card } from '..';
-import './list.scss';
+import { constants } from '../../utils';
+import './List.scss';
 
 const List = (): JSX.Element => {
+	const { restaurants } = useContext(GlobalState);
+
 	return (
-		<div className="list-container">
+		<div className={constants.CLASSNAMES.LIST.CONTAINER}>
 			<Controls />
-			<div className="list-wrapper">
-				<ul className="list">
-					<li className="list-item">
-						<Card
-							title="Restauran title"
-							princeRange="€€"
-							address="640 McLean Ave, Yonkers, NY 10705, Estados Unidos"
-							foodType="Mexican"
-						/>
-					</li>
-					<li className="list-item">
-						<Card
-							title="Restauran title"
-							princeRange="€€"
-							address="640 McLean Ave, Yonkers, NY 10705, Estados Unidos"
-							foodType="Mexican"
-						/>
-					</li>
-					<li className="list-item">
-						<Card
-							title="Restauran title"
-							princeRange="€€"
-							address="640 McLean Ave, Yonkers, NY 10705, Estados Unidos"
-							foodType="Mexican"
-						/>
-					</li>
-					<li className="list-item">
-						<Card
-							title="Restauran title"
-							princeRange="€€"
-							address="640 McLean Ave, Yonkers, NY 10705, Estados Unidos"
-							foodType="Mexican"
-						/>
-					</li>
+			<div className={constants.CLASSNAMES.LIST.WRAPPER}>
+				<ul className={constants.CLASSNAMES.LIST.LIST}>
+					{restaurants?.map(({ id, name, address, priceRange, foodType, images }: IRestaurantsData) => (
+						<li className={constants.CLASSNAMES.LIST.ITEM} key={id}>
+							<Card
+								id={id}
+								name={name}
+								priceRange={priceRange}
+								address={address}
+								foodType={foodType}
+								images={images}
+							/>
+						</li>
+					))}
 				</ul>
 			</div>
 		</div>

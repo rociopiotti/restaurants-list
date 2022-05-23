@@ -1,8 +1,19 @@
 import React from 'react';
-import './chip.scss';
+import { constants } from '../../../../utils';
+import './Chip.scss';
 
-const Chip = ({ label }: { [key: string]: any }): JSX.Element => {
-	return <button className="chip">{label}</button>;
+interface IChip {
+	id: number;
+	label: string;
+	filterList(currentID: number): void;
+}
+
+const Chip = ({ id, label, filterList }: IChip): JSX.Element => {
+	return (
+		<button id={id.toString()} className={constants.CLASSNAMES.CHIP.CONTAINER} onClick={() => filterList(id)}>
+			{label}
+		</button>
+	);
 };
 
 export default Chip;
