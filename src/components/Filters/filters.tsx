@@ -1,27 +1,18 @@
-import React, { useCallback, useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { GlobalState } from '../../context/GlobalState';
-
+import { constants } from '../../utils';
+import { IResponseFoodTypes } from '../../context/models';
 import { Chip } from './childs';
 
-import './filters.scss';
+import './Filters.scss';
 
 const Filters = (): JSX.Element => {
-	const [currentID, setCurrentID] = useState(0);
-	const { foodTypesData } = useContext(GlobalState);
-
-	const filterList = useCallback(
-		(id: number): void => {
-			setCurrentID(id);
-		},
-		[currentID],
-	);
-
-	// restaurantsData.map((item: any) => item).filter((item: any) => item.foodType.includes(currentID)),
+	const { foodTypesData, setFilteredRestaurants } = useContext(GlobalState);
 
 	return (
-		<div className="filters">
-			{foodTypesData.map(({ id, type }: any) => (
-				<Chip key={id} label={type} filterList={filterList} id={id} />
+		<div className={constants.CLASSNAMES.FILTERS.CONTAINER}>
+			{foodTypesData.map(({ id, type }: IResponseFoodTypes) => (
+				<Chip key={id} label={type} filterList={setFilteredRestaurants} id={id} />
 			))}
 		</div>
 	);

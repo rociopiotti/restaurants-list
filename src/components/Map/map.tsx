@@ -1,7 +1,8 @@
 import React, { useEffect, useContext } from 'react';
 import { MapContainer as LeafMap, TileLayer, Marker, Popup } from 'react-leaflet';
 import { GlobalState } from '../../context/GlobalState';
-import './map.scss';
+import { constants } from '../../utils';
+import './Map.scss';
 import 'leaflet/dist/leaflet.css';
 
 const Map = (): JSX.Element => {
@@ -13,9 +14,13 @@ const Map = (): JSX.Element => {
 	}, []);
 
 	return (
-		<div className="map">
-			<LeafMap center={[40.73207085189651, -73.95145454201108]} zoom={12} className="leadMap">
-				<TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+		<div className={constants.CLASSNAMES.MAP.CONTAINER}>
+			<LeafMap
+				center={[constants.GENERAL.MAP.CENTER.LAT, constants.GENERAL.MAP.CENTER.LON]}
+				zoom={constants.GENERAL.MAP.ZOOM}
+				className={constants.CLASSNAMES.MAP.LEAD_MAP}
+			>
+				<TileLayer url={constants.GENERAL.MAP.TITLE_URL} />
 				{restaurants.map(({ position, address }: any, index: number) => {
 					return (
 						// TODO CHANGE POSITION PROP IN RESPONSE and id

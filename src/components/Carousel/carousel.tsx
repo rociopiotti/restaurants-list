@@ -1,31 +1,42 @@
 import React from 'react';
 import { useCarousel } from '../../hooks';
+import { constants } from '../../utils';
 import { Icon } from '..';
-import './carousel.scss';
+import './Carousel.scss';
 
 interface ICarousel {
 	children: JSX.Element[];
 }
 
 const Carousel = ({ children }: ICarousel): JSX.Element => {
-	const { currentIndex, handleTouchMove, handleTouchStart, prev, next } = useCarousel(children.length);
+	const { currentIndex, prev, next } = useCarousel(children.length);
 
 	return (
-		<div className="carousel-container">
-			<div className="carousel-wrapper">
+		<div className={constants.CLASSNAMES.CAROUSEL.CONTAINER}>
+			<div className={constants.CLASSNAMES.CAROUSEL.WRAPPER}>
 				{currentIndex === 1 && (
-					<button className="left-arrow" onClick={prev}>
-						<Icon iconClass="faChevronLeft" type="faChevronLeft" />
+					<button className={constants.CLASSNAMES.CAROUSEL.LEFT_ARROW} onClick={prev}>
+						<Icon
+							iconClass={constants.CLASSNAMES.CAROUSEL.CHEVRON_LEFT}
+							type={constants.ICON_TYPES.CHEVRON_LEFT}
+						/>
 					</button>
 				)}
-				<div className="carousel-content-wrapper" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}>
-					<div className="carousel-content" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+				<div className={constants.CLASSNAMES.CAROUSEL.CONTENT_WRAPPER}>
+					<div
+						className={constants.CLASSNAMES.CAROUSEL.CONTENT}
+						style={{ transform: `${constants.CLASSNAMES.CAROUSEL.TRANSALATE_X}${currentIndex * 50}%)` }}
+						data-testid={constants.TEST_ID.CAROUSEL.ELEMENT}
+					>
 						{children}
 					</div>
 				</div>
 				{currentIndex === 0 && (
-					<button className="right-arrow" onClick={next}>
-						<Icon iconClass="faChevronRight" type="faChevronRight" />
+					<button className={constants.CLASSNAMES.CAROUSEL.RIGHT_ARROW} onClick={next}>
+						<Icon
+							iconClass={constants.CLASSNAMES.CAROUSEL.CHEVRON_RIGHT}
+							type={constants.ICON_TYPES.CHEVRON_RIGHT}
+						/>
 					</button>
 				)}
 			</div>
