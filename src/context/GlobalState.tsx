@@ -19,9 +19,18 @@ const GlobalStateProvider = ({ children }: IGlobalStateProvider): JSX.Element =>
 	const { getData: getRestaurants } = useFetch(constants.API.RESTAURANT_API.url);
 	const { getData: getFoodType } = useFetch(constants.API.FOOD_TYPE_API.url);
 	const { getData: getPriceRange } = useFetch(constants.API.PRINCE_RANGE_API.url);
-	const { data: restaurantsData, isSuccess: onSuccessRestaurant } = useQuery('restaurants', getRestaurants);
-	const { data: foodTypesResponse, isSuccess: onSuccessFoodType } = useQuery('foodType', getFoodType);
-	const { data: priceRange, isSuccess: onSuccessPriceRange } = useQuery('priceRange', getPriceRange);
+	const { data: restaurantsData, isSuccess: onSuccessRestaurant } = useQuery(
+		constants.GENERAL.QUERY_KEY_RESTAURANTS,
+		getRestaurants,
+	);
+	const { data: foodTypesResponse, isSuccess: onSuccessFoodType } = useQuery(
+		constants.GENERAL.QUERY_KEY_FOOD_TYPE,
+		getFoodType,
+	);
+	const { data: priceRange, isSuccess: onSuccessPriceRange } = useQuery(
+		constants.GENERAL.QUERY_KEY_PRICE_RANGE,
+		getPriceRange,
+	);
 	// #endregion hooks
 
 	// #region methods

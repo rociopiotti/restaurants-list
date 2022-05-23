@@ -13,6 +13,11 @@ const constants = {
 			url: 'https://run.mocky.io/v3/44ecbb79-5a5a-472f-8383-2a039db5c852',
 		},
 	},
+	GENERAL: {
+		QUERY_KEY_RESTAURANTS: 'restaurants',
+		QUERY_KEY_FOOD_TYPE: 'foodTypes',
+		QUERY_KEY_PRICE_RANGE: 'priceRanges',
+	},
 	MESSAGES: {
 		HEADER: {
 			TITLE: 'Restaurants list',
