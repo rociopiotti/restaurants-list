@@ -1,6 +1,5 @@
 import React from 'react';
 import './Icon.scss';
-
 // FONT-AWESOME:
 import {
 	faSortAlphaDown,
@@ -14,32 +13,38 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { constants } from '../../utils';
 
-const Icon = ({ type, iconClass }: { [key: string]: any }): JSX.Element => {
+interface IICON {
+	type: string;
+	iconClass: string;
+}
+
+const Icon = ({ type, iconClass }: IICON): JSX.Element => {
 	let faIcon;
 	switch (type) {
-		case 'faUtensils':
+		case constants.ICON_TYPES.FOODTYPE:
 			faIcon = faUtensils;
 			break;
-		case 'faStar':
+		case constants.ICON_TYPES.STAR:
 			faIcon = faStar;
 			break;
-		case 'sortAZ':
+		case constants.ICON_TYPES.SORT_AZ:
 			faIcon = faSortAlphaDown;
 			break;
-		case 'sortZA':
+		case constants.ICON_TYPES.SORT_ZA:
 			faIcon = faSortAlphaUp;
 			break;
-		case 'faChevronDown':
+		case constants.ICON_TYPES.CHEVRON_DOWN:
 			faIcon = faChevronDown;
 			break;
-		case 'faChevronLeft':
+		case constants.ICON_TYPES.CHEVRON_LEFT:
 			faIcon = faChevronLeft;
 			break;
-		case 'faChevronRight':
+		case constants.ICON_TYPES.CHEVRON_RIGHT:
 			faIcon = faChevronRight;
 			break;
-		case 'faLocationDot':
+		case constants.ICON_TYPES.LOCATION:
 			faIcon = faLocationDot;
 			break;
 
@@ -47,7 +52,7 @@ const Icon = ({ type, iconClass }: { [key: string]: any }): JSX.Element => {
 			faIcon = null;
 			break;
 	}
-	return <FontAwesomeIcon className={`icon ${iconClass}`} icon={faIcon as any} />;
+	return <FontAwesomeIcon className={`${constants.CLASSNAMES.ICON} ${iconClass}`} icon={faIcon as any} />;
 };
 
 export default Icon;

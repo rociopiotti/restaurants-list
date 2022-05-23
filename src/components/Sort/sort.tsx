@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { GlobalState } from '../../context/GlobalState';
+import { constants } from '../../utils';
 import { Icon } from '..';
 import './Sort.scss';
 
@@ -22,12 +23,26 @@ const Sort = (): JSX.Element => {
 	};
 
 	return (
-		<div className="sort">
-			<button className="icon-button-left" onClick={onClickSortAZ}>
-				<Icon iconClass={isSelected.sortAZ ? 'sortAZ--state-selected' : 'sortAZ'} type="sortAZ" />
+		<div className={constants.CLASSNAMES.SORT.CONTAINER}>
+			<button className={constants.CLASSNAMES.SORT.ICON_BTN_LEFT} onClick={onClickSortAZ}>
+				<Icon
+					iconClass={
+						isSelected.sortAZ
+							? constants.CLASSNAMES.SORT.ICON_SORT_AZ_SELECTED
+							: constants.CLASSNAMES.SORT.ICON_SORT_AZ
+					}
+					type={constants.ICON_TYPES.SORT_AZ}
+				/>
 			</button>
-			<button className="icon-button-right" onClick={onClickSortZA}>
-				<Icon iconClass={isSelected.sortZA ? 'sortZA--state-selected' : 'sortZA'} type="sortZA" />
+			<button className={constants.CLASSNAMES.SORT.ICON_BTN_RIGHT} onClick={onClickSortZA}>
+				<Icon
+					iconClass={
+						isSelected.sortZA
+							? constants.CLASSNAMES.SORT.ICON_SORT_ZA_SELECTED
+							: constants.CLASSNAMES.SORT.ICON_SORT_ZA
+					}
+					type={constants.ICON_TYPES.SORT_ZA}
+				/>
 			</button>
 		</div>
 	);
