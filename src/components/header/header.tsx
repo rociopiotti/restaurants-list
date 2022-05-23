@@ -1,6 +1,6 @@
 import React from 'react';
 import { constants } from '../../utils';
-import './header.scss';
+import './Header.scss';
 
 const Header = (): JSX.Element => {
 	return (

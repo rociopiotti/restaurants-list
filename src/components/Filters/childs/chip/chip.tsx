@@ -1,5 +1,5 @@
 import React from 'react';
-import './chip.scss';
+import './Chip.scss';
 
 const Chip = ({ id, label, filterList }: { [key: string]: any }): JSX.Element => {
 	return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Filters, Sort } from '..';
-import './controls.scss';
+import './Controls.scss';
 
 const Controls = (): JSX.Element => {
 	return (

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Icon, Carousel } from '..';
-import './card.scss';
+import './Card.scss';
 
 const Card = ({ title, princeRange, address, foodType, images }: { [key: string]: any }): JSX.Element => {
 	const [isChecked, setIsChecked] = useState(false);

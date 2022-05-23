@@ -1,14 +1,14 @@
 import React from 'react';
 import { useCarousel } from '../../hooks';
 import { Icon } from '..';
-import './carousel.scss';
+import './Carousel.scss';
 
 interface ICarousel {
 	children: JSX.Element[];
 }
 
 const Carousel = ({ children }: ICarousel): JSX.Element => {
-	const { currentIndex, handleTouchMove, handleTouchStart, prev, next } = useCarousel(children.length);
+	const { currentIndex, prev, next } = useCarousel(children.length);
 
 	return (
 		<div className="carousel-container">
@@ -18,8 +18,8 @@ const Carousel = ({ children }: ICarousel): JSX.Element => {
 						<Icon iconClass="faChevronLeft" type="faChevronLeft" />
 					</button>
 				)}
-				<div className="carousel-content-wrapper" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}>
-					<div className="carousel-content" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+				<div className="carousel-content-wrapper">
+					<div className="carousel-content" style={{ transform: `translateX(-${currentIndex * 50}%)` }}>
 						{children}
 					</div>
 				</div>

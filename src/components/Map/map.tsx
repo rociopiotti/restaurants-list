@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import { MapContainer as LeafMap, TileLayer, Marker, Popup } from 'react-leaflet';
 import { GlobalState } from '../../context/GlobalState';
-import './map.scss';
+import './Map.scss';
 import 'leaflet/dist/leaflet.css';
 
 const Map = (): JSX.Element => {

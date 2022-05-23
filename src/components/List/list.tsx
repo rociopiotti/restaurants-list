@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { GlobalState } from '../../context/GlobalState';
 import { Controls, Card } from '..';
-import './list.scss';
+import './List.scss';
 
 const List = (): JSX.Element => {
 	const { restaurants } = useContext(GlobalState);
