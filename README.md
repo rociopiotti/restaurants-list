@@ -147,8 +147,8 @@ _For more examples, please refer to the [Project document](https://drive.google.
 
 - [x] Mock API to provide restaurant list.
 - [x] Restaurants list.
-- [ ] Filter list.
-- [ ] Sort  list.
+- [x] Filter list.
+- [x] Sort  list.
 - [x] OpenStreetMap integration.
 - [x] Deployment in Netlify.
 
