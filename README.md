@@ -6,6 +6,7 @@ Restaurants list demo created by Rocio Piotti provides the user with a list of r
 
 > This is a work in progress demo. Information will be updated.
 
+[Work In Progress DEMO](https://restaurants-list-demo.netlify.app/)
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -145,12 +146,11 @@ _For more examples, please refer to the [Project document](https://drive.google.
 ## Roadmap
 
 - [x] Mock API to provide restaurant list.
-- [ ] Restaurants list.
-- [ ] Favorite list items.
+- [x] Restaurants list.
 - [ ] Filter list.
 - [ ] Sort  list.
-- [ ] OpenStreetMap integration.
-- [ ] Deployment in Netlify.
+- [x] OpenStreetMap integration.
+- [x] Deployment in Netlify.
 
 
 See the [Jira Backlog](https://rociodevelopment.atlassian.net/) for a full list of tasks.

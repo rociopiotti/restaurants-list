@@ -1,0 +1,64 @@
+@import '../../styles/variables.scss';
+
+.card {
+	background-color: $secondary-color-4;
+	margin-bottom: 0.5rem;
+	.icon-button {
+		border: none;
+	}
+
+	.title-container {
+		height: auto;
+		display: flex;
+		justify-content: space-between;
+		align-content: center;
+		padding: 0.5rem;
+
+		h2 {
+			margin: 0;
+			align-self: center;
+		}
+
+		.icon-button {
+			font-size: 1.5rem;
+			padding: 0;
+		}
+	}
+
+	.price-range {
+		margin: 0;
+		padding: 0.5rem;
+	}
+
+	.address,
+	.food-type {
+		display: flex;
+		flex-direction: row;
+		align-content: center;
+		padding: 0.5rem;
+
+		p {
+			margin: 0;
+			align-self: center;
+			font-size: 1rem;
+		}
+	}
+}
+
+.icon.faLocationDot,
+.icon.faUtensils {
+	padding-right: 0.5rem;
+	align-self: center;
+}
+
+
+@media screen and (min-width: 780px) {
+
+	.address,
+	.food-type {
+
+		p {
+			font-size: 1rem;
+		}
+	}
+}
