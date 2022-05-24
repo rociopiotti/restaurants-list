@@ -124,17 +124,29 @@ This document presents details of the Restaurants list demo.
 
 
 <!-- GETTING STARTED -->
-## WIP: Getting Started
 
 ### WIP: Prerequisites
 
-### WIP: Installation
+### Installation
+
+- Clone the repo
+- ```npm install```
+
+- To run the site in local: ```npm run start```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 <!-- USAGE EXAMPLES -->
 ## WIP: Usage
+
+- The user can load the page and sort the list ascending and descending by clicking on the sort buttons.
+
+- The user can filter the list by food type by clicking on the pills.
+
+- The user can see the restaurant address in the map by clicking on the marker.
+
+- The user can swipe between the restaurant's images by clicking on the arrows.
 
 _For more examples, please refer to the [Project document](https://drive.google.com/file/d/1zPkwykzrs9nOeaw-IbQI58gjre_4j844/view?usp=sharing)_
 
