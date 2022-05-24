@@ -138,7 +138,7 @@ This document presents details of the Restaurants list demo.
 
 
 <!-- USAGE EXAMPLES -->
-## WIP: Usage
+## Usage
 
 - The user can load the page and sort the list ascending and descending by clicking on the sort buttons.
 
